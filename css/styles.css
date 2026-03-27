@@ -349,3 +349,83 @@ body {
     font-size: 2.1rem;
   }
 }
+/* RESERVAS PAGE */
+.reservas-page {
+  padding-top: 90px;
+}
+
+.reservas-hero {
+  padding: 90px 0 40px;
+  text-align: center;
+  background: #111;
+}
+
+.reservas-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.reservas-hero p {
+  color: #bbb;
+}
+
+.reservas-form-section {
+  padding: 70px 0;
+}
+
+.reservas-form {
+  max-width: 800px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0f0f0f;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.full {
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
