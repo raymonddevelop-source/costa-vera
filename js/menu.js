@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalPrice = document.getElementById("modalPrice");
   const modalDescription = document.getElementById("modalDescription");
   const modalExtra = document.getElementById("modalExtra");
+  const modalImg = document.querySelector(".menu-modal-img");
 
+  // FILTRO
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const category = button.dataset.category;
@@ -30,33 +32,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ABRIR MODAL
+  function openModal(card) {
+    modalTitle.textContent = card.dataset.title || "";
+    modalPrice.textContent = card.dataset.price || "";
+    modalDescription.textContent = card.dataset.description || "";
+    modalExtra.textContent = card.dataset.extra || "";
+
+    // 👇 AQUÍ AGARRAMOS LA IMAGEN
+    const imgDiv = card.querySelector(".menu-card-img");
+    const bg = imgDiv.style.backgroundImage;
+
+    modalImg.style.backgroundImage = bg;
+
+    modal.classList.add("open");
+    document.body.classList.add("modal-open");
+  }
+
   detailButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const card = event.target.closest(".menu-card");
       if (!card) return;
-
-      modalTitle.textContent = card.dataset.title || "";
-      modalPrice.textContent = card.dataset.price || "";
-      modalDescription.textContent = card.dataset.description || "";
-      modalExtra.textContent = card.dataset.extra || "";
-
-      modal.classList.add("open");
-      document.body.classList.add("modal-open");
+      openModal(card);
     });
   });
 
   cards.forEach((card) => {
     card.addEventListener("dblclick", () => {
-      modalTitle.textContent = card.dataset.title || "";
-      modalPrice.textContent = card.dataset.price || "";
-      modalDescription.textContent = card.dataset.description || "";
-      modalExtra.textContent = card.dataset.extra || "";
-
-      modal.classList.add("open");
-      document.body.classList.add("modal-open");
+      openModal(card);
     });
   });
 
+  // CERRAR
   closeModal.addEventListener("click", () => {
     modal.classList.remove("open");
     document.body.classList.remove("modal-open");
