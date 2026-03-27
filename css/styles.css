@@ -501,8 +501,10 @@ body {
 .menu-modal-img {
   height: 220px;
   border-radius: 14px;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  background-color: #111;
   margin-bottom: 20px;
 }
 
