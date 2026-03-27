@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalExtra.textContent = card.dataset.extra || "";
 
     const imgDiv = card.querySelector(".menu-card-img");
+
     if (imgDiv && modalImg) {
       const bg = window.getComputedStyle(imgDiv).backgroundImage;
       modalImg.style.backgroundImage = bg;
@@ -47,6 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal.classList.add("open");
     document.body.classList.add("modal-open");
+  }
+
+  function closeMenuModal() {
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
   }
 
   detailButtons.forEach((button) => {
@@ -57,12 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
       openModal(card);
     });
 
-    button.addEventListener("touchend", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const card = button.closest(".menu-card");
-      openModal(card);
-    }, { passive: false });
+    button.addEventListener(
+      "touchend",
+      (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const card = button.closest(".menu-card");
+        openModal(card);
+      },
+      { passive: false }
+    );
   });
 
   cards.forEach((card) => {
@@ -72,28 +82,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   closeModal.addEventListener("click", () => {
-    modal.classList.remove("open");
-    document.body.classList.remove("modal-open");
+    closeMenuModal();
   });
 
-  closeModal.addEventListener("touchend", (event) => {
-    event.preventDefault();
-    modal.classList.remove("open");
-    document.body.classList.remove("modal-open");
-  }, { passive: false });
+  closeModal.addEventListener(
+    "touchend",
+    (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      closeMenuModal();
+    },
+    { passive: false }
+  );
 
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
-      modal.classList.remove("open");
-      document.body.classList.remove("modal-open");
+      closeMenuModal();
     }
   });
 
-  modal.addEventListener("touchend", (event) => {
-    if (event.target === modal) {
-      event.preventDefault();
-      modal.classList.remove("open");
-      document.body.classList.remove("modal-open");
-    }
-  }, { passive: false });
+  modal.addEventListener(
+    "touchend",
+    (event) => {
+      if (event.target === modal) {
+        event.preventDefault();
+        closeMenuModal();
+      }
+    },
+    { passive: false }
+  );
 });
