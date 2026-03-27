@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costa Vera | Reservaciones</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Costa Vera</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="reservas.html">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="reservas-page">
+
+    <section class="reservas-hero">
+      <div class="container">
+        <h1>Reservaciones</h1>
+        <p>Reserve su mesa y disfrute de una experiencia gastronómica exclusiva.</p>
+      </div>
+    </section>
+
+    <section class="reservas-form-section">
+      <div class="container">
+        <form class="reservas-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" placeholder="Nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="(787) 000-0000" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Fecha</label>
+              <input type="date" required>
+            </div>
+
+            <div class="form-group">
+              <label>Hora</label>
+              <input type="time" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Personas</label>
+              <select required>
+                <option value="">Seleccione</option>
+                <option>1 persona</option>
+                <option>2 personas</option>
+                <option>3 personas</option>
+                <option>4 personas</option>
+                <option>5 personas</option>
+                <option>6+ personas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Área</label>
+              <select>
+                <option>Interior</option>
+                <option>Terraza</option>
+                <option>Frente al mar</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Notas adicionales</label>
+            <textarea rows="4" placeholder="Solicitudes especiales..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary full">
+            Confirmar Reservación
+          </button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Costa Vera</p>
+    </div>
+  </footer>
+
+</body>
+</html>
