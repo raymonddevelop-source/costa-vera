@@ -429,3 +429,6 @@ body {
     flex-direction: column;
   }
 }
+.menu-section {
+  transition: opacity 0.25s ease;
+}
