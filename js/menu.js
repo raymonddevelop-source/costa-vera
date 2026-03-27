@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalExtra = document.getElementById("modalExtra");
   const modalImg = document.querySelector(".menu-modal-img");
 
-  // FILTRO
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const category = button.dataset.category;
@@ -32,18 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ABRIR MODAL
   function openModal(card) {
+    if (!card) return;
+
     modalTitle.textContent = card.dataset.title || "";
     modalPrice.textContent = card.dataset.price || "";
     modalDescription.textContent = card.dataset.description || "";
     modalExtra.textContent = card.dataset.extra || "";
 
-    // 👇 AQUÍ AGARRAMOS LA IMAGEN
     const imgDiv = card.querySelector(".menu-card-img");
-    const bg = imgDiv.style.backgroundImage;
-
-    modalImg.style.backgroundImage = bg;
+    if (imgDiv && modalImg) {
+      const bg = window.getComputedStyle(imgDiv).backgroundImage;
+      modalImg.style.backgroundImage = bg;
+    }
 
     modal.classList.add("open");
     document.body.classList.add("modal-open");
@@ -51,10 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   detailButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const card = event.target.closest(".menu-card");
-      if (!card) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const card = button.closest(".menu-card");
       openModal(card);
     });
+
+    button.addEventListener("touchend", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const card = button.closest(".menu-card");
+      openModal(card);
+    }, { passive: false });
   });
 
   cards.forEach((card) => {
@@ -63,11 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // CERRAR
   closeModal.addEventListener("click", () => {
     modal.classList.remove("open");
     document.body.classList.remove("modal-open");
   });
+
+  closeModal.addEventListener("touchend", (event) => {
+    event.preventDefault();
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
+  }, { passive: false });
 
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
@@ -75,4 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("modal-open");
     }
   });
+
+  modal.addEventListener("touchend", (event) => {
+    if (event.target === modal) {
+      event.preventDefault();
+      modal.classList.remove("open");
+      document.body.classList.remove("modal-open");
+    }
+  }, { passive: false });
 });
