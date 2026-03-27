@@ -497,7 +497,8 @@ body {
 .menu-modal-img {
   height: 220px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #222, #353535);
+  background-size: cover;
+  background-position: center;
   margin-bottom: 20px;
 }
 
