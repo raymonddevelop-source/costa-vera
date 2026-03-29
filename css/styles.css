@@ -892,3 +892,20 @@ textarea {
   border-color: rgba(216, 179, 106, 0.4);
   transform: scale(1.05);
 }
+.menu-modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.menu-modal.open {
+  display: flex !important;
+}
+
+.menu-modal-box {
+  position: relative;
+  max-width: 760px;
+  width: 100%;
+  z-index: 2;
+}
