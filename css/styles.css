@@ -824,3 +824,28 @@ textarea {
   position: relative;
   z-index: 2;
 }
+/* FIX: capas visuales no bloquean clicks */
+.menu-section::before,
+.menu-hero::before,
+.menu-hero::after,
+.reservas-hero::before,
+.reservas-hero::after,
+.about::before,
+.featured::before,
+.cta::before,
+.reservas-form-section::before {
+  pointer-events: none !important;
+}
+
+.menu-modal {
+  pointer-events: none;
+}
+
+.menu-modal.active {
+  pointer-events: auto;
+}
+
+.menu-modal-box,
+.menu-modal-close {
+  pointer-events: auto;
+}
