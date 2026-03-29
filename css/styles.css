@@ -849,3 +849,18 @@ textarea {
 .menu-modal-close {
   pointer-events: auto;
 }
+.menu-modal.open,
+.menu-modal.active {
+  display: flex !important;
+}
+.menu-section::before,
+.menu-hero::before,
+.menu-hero::after,
+.reservas-hero::before,
+.reservas-hero::after,
+.about::before,
+.featured::before,
+.cta::before,
+.reservas-form-section::before {
+  pointer-events: none !important;
+}
