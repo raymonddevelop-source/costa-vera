@@ -552,7 +552,7 @@ section {
   -webkit-backdrop-filter: blur(10px);
 }
 
-.menu-modal.active {
+.menu-modal.open {
   display: flex;
 }
 
