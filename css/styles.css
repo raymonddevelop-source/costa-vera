@@ -909,3 +909,8 @@ textarea {
   width: 100%;
   z-index: 2;
 }
+/* Ajuste específico para cócteles */
+.menu-section[data-section="cocteles"] .menu-card-img {
+  background-size: cover;
+  background-position: center 32%;
+}
