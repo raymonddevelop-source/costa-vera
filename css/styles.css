@@ -864,3 +864,31 @@ textarea {
 .reservas-form-section::before {
   pointer-events: none !important;
 }
+.menu-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 50%;
+  background: rgba(8, 13, 20, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: all 0.3s ease;
+}
+
+.menu-modal-close:hover {
+  background: rgba(216, 179, 106, 0.18);
+  border-color: rgba(216, 179, 106, 0.4);
+  transform: scale(1.05);
+}
