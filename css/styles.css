@@ -1297,3 +1297,50 @@ nav {
     flex: unset;
   }
 }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.22));
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .logo {
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  .header-logo {
+    height: 48px;
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
