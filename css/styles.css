@@ -1238,7 +1238,7 @@ body {
   }
 }
 .header-logo {
-  height: 30px;
+  height: 34px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -1247,6 +1247,6 @@ body {
 
 @media (max-width: 768px) {
   .header-logo {
-    height: 24px;
+    height: 28px;
   }
 }
