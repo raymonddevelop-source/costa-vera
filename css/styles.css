@@ -935,3 +935,80 @@ body::before {
 .footer {
   background-color: rgba(6, 11, 17, 0.92);
 }
+.footer {
+  position: relative;
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(75, 56, 170, 0.45), transparent 60%),
+    linear-gradient(180deg, rgba(6,11,17,0) 0%, rgba(6,11,17,0.88) 18%, #05080d 100%);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.footer .social {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.8rem;
+}
+
+.footer .social a {
+  width: 78px;
+  height: 78px;
+  border-radius: 24px;
+  background: rgba(6, 11, 17, 0.78);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.footer .social a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216,179,106,0.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.45),
+    0 0 20px rgba(216,179,106,0.12);
+}
+
+.footer .social svg {
+  width: 30px;
+  height: 30px;
+}
+
+.copyright {
+  position: relative;
+  z-index: 2;
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.copyright-link {
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.copyright-link:hover {
+  color: #d8b36a;
+}
