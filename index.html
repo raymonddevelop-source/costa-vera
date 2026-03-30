@@ -169,6 +169,22 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script>
+  const revealElements = document.querySelectorAll('.reveal-left, .reveal-right');
 
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: "0px 0px -8% 0px"
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
