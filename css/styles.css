@@ -1221,3 +1221,6 @@ body::before {
     transition: none !important;
   }
 }
+.feature-card:last-child img {
+  object-position: center 78%;
+}
