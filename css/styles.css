@@ -1203,70 +1203,17 @@ body::after,
 body {
   overscroll-behavior-x: none;
 }
-.hero-overlay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-logo {
-  display: block;
-  width: min(420px, 78vw);
-  height: auto;
-  margin: 0 auto 1.5rem;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.35));
-}
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.header-logo {
-  height: 58px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.25));
-}
-
-@media (max-width: 768px) {
-  .header-logo {
-    height: 48px;
-  }
-}
-.header-logo {
-  height: 34px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.22));
-}
-
-@media (max-width: 768px) {
-  .header-logo {
-    height: 28px;
-  }
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex: 1;
+  flex: 0 0 auto;
 }
 
 .header-logo {
-  height: 42px;
-  width: auto;
   display: block;
+  height: 56px;
+  width: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.22));
 }
@@ -1278,51 +1225,12 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .header-logo {
-    height: 36px;
-  }
-
   .nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .logo {
-    justify-content: center;
-    flex: unset;
-  }
-
-  nav {
-    justify-content: center;
-    flex: unset;
-  }
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.header-logo {
-  height: 56px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.22));
-}
-
-@media (max-width: 768px) {
-  .nav {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    gap: 0;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 0.75rem;
   }
 
   .logo {
@@ -1331,7 +1239,7 @@ nav {
   }
 
   .header-logo {
-    height: 48px;
+    height: 60px;
   }
 
   nav {
@@ -1341,6 +1249,22 @@ nav {
   }
 
   .nav-links {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-logo {
+    height: 56px;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.92rem;
   }
 }
