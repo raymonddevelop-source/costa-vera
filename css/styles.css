@@ -1122,3 +1122,81 @@ textarea {
     transition: none !important;
   }
 }
+/* =========================
+   FIX iPhone lateral scroll
+   ========================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* evita que se desborde cualquier bloque visual */
+section,
+.container,
+.hero,
+.menu-hero,
+.reservas-hero,
+.showcase-banner,
+.terrace-section,
+.showcase-image,
+.terrace-photo,
+.cards,
+.menu-grid,
+.card,
+.menu-card,
+.menu-modal-box,
+.footer {
+  max-width: 100%;
+}
+
+/* iPhone/Safari: elementos animados no deben empujar el layout */
+.reveal-left,
+.reveal-right {
+  overflow: hidden;
+}
+
+/* reduce el desplazamiento lateral en móvil para evitar el "jalón" al cargar */
+@media (max-width: 768px) {
+  .reveal-left {
+    transform: translate3d(-18px, 0, 0);
+  }
+
+  .reveal-right {
+    transform: translate3d(18px, 0, 0);
+  }
+}
+
+/* evita rebote visual por imágenes/bloques internos */
+.showcase-image img,
+.terrace-photo img,
+.card-img,
+.menu-card-img,
+.menu-modal-img {
+  max-width: 100%;
+}
+
+/* por seguridad con pseudo-elementos grandes */
+body::before,
+body::after,
+.hero::before,
+.menu-hero::before,
+.menu-hero::after,
+.reservas-hero::before,
+.reservas-hero::after,
+.about::before,
+.featured::before,
+.cta::before,
+.menu-section::before,
+.reservas-form-section::before {
+  max-width: 100%;
+}
