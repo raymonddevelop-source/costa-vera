@@ -914,3 +914,24 @@ textarea {
   background-size: cover;
   background-position: center 32%;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #060b11;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+/* iPhone safe areas */
+body::before {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.header,
+.footer {
+  background-color: rgba(6, 11, 17, 0.92);
+}
