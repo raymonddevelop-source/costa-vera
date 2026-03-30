@@ -1022,3 +1022,6 @@ body::before {
   width: 22px !important;
   height: 22px !important;
 }
+.footer::before {
+  background: none !important;
+}
