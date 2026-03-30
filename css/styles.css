@@ -1024,4 +1024,18 @@ body::before {
 }
 .footer::before {
   background: none !important;
+
+}
+.footer {
+  background: #05080d !important;
+}
+
+.footer::before,
+.footer::after {
+  background: none !important;
+  opacity: 0 !important;
+}
+
+.footer .social a {
+  background: rgba(6, 11, 17, 0.95) !important;
 }
